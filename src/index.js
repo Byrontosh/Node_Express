@@ -1,28 +1,11 @@
 // const express = require('express')
 // const app = express()
-// app.use(express.json())
-// app.post('/product',(req,res)=>{
-//     const {nombre,edad} = req.body
-//     res.send(`Los datos enviados son: ${nombre} - ${edad}`)
+// app.use((req,res,next)=>{
+//     console.log(`ruta invocada: ${req.path} - método: ${req.method}`);
+//     next()
 // })
-// app.listen(3000)
-// console.log('Servidor ejecutandose en el puerto 3000')
-
-
-
-
-
-// const express = require('express')
-// const app = express()
-// app.get('/user/:data',(req,res)=>
-// {
-//     console.log(typeof(req.params.data));
-//     res.send(`Bienvenido - ${req.params.data}`)
-// })
-// app.get('/operacion/:num1/:num2',(req,res)=>
-// {
-//     const {num1,num2}= req.params
-//     res.send(`La suma es - ${Number(num1) + Number(num2) }`)
+// app.get('/profile',(req,res)=>{
+//     res.send("Bienvenido al perfil del usuario")
 // })
 // app.listen(3000)
 // console.log('Servidor ejecutandose en el puerto 3000');
@@ -31,42 +14,40 @@
 
 
 
+
+
 // const express = require('express')
 // const app = express()
-// app.get('/user/:profile/photo',(req,res)=>
-// {
-//     if(req.params.profile === "byron")
-//     res.sendFile('./girlandboy.png',{
-//         root:__dirname
-//     })
+// app.get('/',(req,res)=>{
+//     res.send("Landing page")
+// })
+// app.use((req,res,next)=>{
+//     console.log(`ruta invocada: ${req.path} - método: ${req.method}`);
+//     next()
+// })
+// app.use((req,res,next)=>{
+//     if(req.query.login==="byron@gmail.com"){
+//         next()
+//     }
 //     else{
-//         res.send("No es un usuario válido...")
+//         res.send("El usuario no se encuentra autenticado")
 //     }
 // })
-// app.get('/nombre/:nombre/edad/:edad',(req,res)=>{
-//     res.send(`El nombre del usuario es: ${req.params.nombre} y su edad es: ${req.params.edad}`)
+// app.get('/dashboard',(req,res)=>{
+//     res.send("Bienvenido usuario al sistema web")
 // })
 // app.listen(3000)
-// console.log('Servidor ejecutandose en el puerto 3000')
-
-
+// console.log('Servidor ejecutandose en el puerto 3000');
 
 
 
 
 // const express = require('express')
+// const morgan = require('morgan')
 // const app = express()
-
-// app.get('/search',(req,res)=>{
-//     console.log(req.query)
-//     if(req.query.data === "js")
-//     {
-//         res.send("Libros de JS")
-//     }
-//     else{
-//         res.send("Libros de dom")
-//     }
+// app.use(morgan('dev'))
+// app.get('/',(req,res)=>{
+//     res.send("Probando el uso de un middleware")
 // })
-
 // app.listen(3000)
 // console.log('Servidor ejecutandose en el puerto 3000');
