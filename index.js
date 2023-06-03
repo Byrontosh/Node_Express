@@ -1,9 +1,42 @@
-const http = require('http')
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-const server = http.createServer((req,res)=>{
-    res.write('Hello World!');
-    res.end()
+
+app.get('/',(req,res)=>{
+    res.send("Landing page - Grupo #")
 })
 
-server.listen(3000)
-console.log('Servidor ejecutandose en el puerto 3000');
+app.get('/integrantes',(req,res)=>{
+    res.json([
+        {
+            "nombre":"Byron",
+            "apellido":"Loarte",
+            "edad":34
+        },
+        {
+            "nombre":"Juan",
+            "apellido":"Álvear",
+            "edad":38
+        },
+        {
+            "nombre":"Ximena",
+            "apellido":"Salazar",
+            "edad":33
+        }
+    ])
+})
+
+app.get('/products',(req,res)=>{
+    res.send(`
+            <h1>Catálogo de productos</h1>
+                <p>Bienvenidos</p>
+    `)
+})
+
+
+
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
+});
+
