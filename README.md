@@ -15,5 +15,6 @@ https://appexpressweb.onrender.com/integrantes
 
 ___
 https://appexpressweb.onrender.com/
-![image](https://github.com/Byrontosh/Node_Express/assets/26908663/b2002279-a26a-45d6-8907-3fb2e6cdc0bf)
+![image](https://github.com/Byrontosh/Node_Express/assets/26908663/86561f0c-fc35-494d-ba66-23e414bd7d14)
+
 
